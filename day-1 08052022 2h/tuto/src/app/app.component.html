@@ -1,0 +1,88 @@
+<!--<h1> {{ username }} </h1>
+
+<p>
+    born at : {{ year }}
+</p>  
+
+<p>
+    {{ employees }}
+</p> 
+<p>
+    {{ employee }}
+</p>-->
+
+
+
+<!--*****************   ngFor  *****************-->
+<!--
+
+
+<ul>
+    <li  *ngFor="let e of employees "   > 
+        <h3> {{ e.name }} </h3>
+        <p>
+            {{ e.email }}
+        </p>
+    </li>
+</ul>
+
+
+<hr>
+
+
+
+<ul>
+    <li *ngFor="let h of heros">
+        <h3> {{ h.name }} {{ h.lastname }} </h3>
+        <p>
+            {{h.email}}
+        </p>
+    </li>
+</ul>-->
+
+
+
+<!--**********************ngIf**************************************-->
+
+
+<!-- afficher showBloc == false --> 
+<div  *ngIf="showBloc == false " >
+    <h3>Bloc 1 </h3>
+    <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit assumenda ea harum autem magni distinctio quibusdam sit! Sunt magni omnis cum dignissimos assumenda quam autem. Voluptate ipsa nulla odit facilis.
+    </p>
+</div>
+
+
+<!-- afficher showBloc == true --> 
+<div *ngIf="showBloc == true " >
+    <h3>Bloc 2</h3>
+    <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit assumenda ea harum autem magni distinctio quibusdam sit! Sunt magni omnis cum dignissimos assumenda quam autem. Voluptate ipsa nulla odit facilis.
+    </p>
+</div>
+
+<hr>
+
+<ul>
+    <li *ngFor="let e of users">
+        <!--
+                <h3  *ngIf=" e.year < 2000 "   class="old-employee">
+                    {{ e.name }} : {{ e.year }}
+                </h3>
+
+                <h3 *ngIf=" e.year >= 2000 " class="new-employee">
+                    {{ e.name }} : {{ e.year }}
+                </h3>
+    
+    -->
+
+    <!-- ******************** ngClass ****************************-->
+
+
+            <h3 [ngClass]="      e.year >= 2000 ? 'new-employee' : 'old-employee'     ">
+                {{ e.name }} => {{ e.year }}
+            </h3>
+        
+    </li>
+</ul>
