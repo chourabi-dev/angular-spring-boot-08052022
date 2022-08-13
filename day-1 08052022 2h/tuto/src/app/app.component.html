@@ -46,7 +46,7 @@
 
 
 <!-- afficher showBloc == false --> 
-<div  *ngIf="showBloc == false " >
+<!--<div  *ngIf="showBloc == false " >
     <h3>Bloc 1 </h3>
     <p>
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit assumenda ea harum autem magni distinctio quibusdam sit! Sunt magni omnis cum dignissimos assumenda quam autem. Voluptate ipsa nulla odit facilis.
@@ -54,7 +54,7 @@
 </div>
 
 
-<!-- afficher showBloc == true --> 
+ afficher showBloc == true  
 <div *ngIf="showBloc == true " >
     <h3>Bloc 2</h3>
     <p>
@@ -66,7 +66,7 @@
 
 <ul>
     <li *ngFor="let e of users">
-        <!--
+         
                 <h3  *ngIf=" e.year < 2000 "   class="old-employee">
                     {{ e.name }} : {{ e.year }}
                 </h3>
@@ -75,14 +75,79 @@
                     {{ e.name }} : {{ e.year }}
                 </h3>
     
-    -->
+     
 
-    <!-- ******************** ngClass ****************************-->
+      ******************** ngClass ****************************
 
 
             <h3 [ngClass]="      e.year >= 2000 ? 'new-employee' : 'old-employee'     ">
                 {{ e.name }} => {{ e.year }}
             </h3>
+
+
+    
         
     </li>
+</ul>-->
+
+
+<!--
+<img [src]=" photoURL " alt="" width="100%">
+
+<button>previous</button> <button  (click)="nextPhoto()"  >next</button>-->
+
+
+<!--
+<ul>
+    <li *ngFor="let p of shoppingList ; let i = index;">
+        <p>
+            <strong>{{ p.label }}</strong> <br>
+            <small> {{ p.date | date:'medium' }} </small>
+        </p>
+
+        <button (click)="deleteProduct(i)" >delete </button>
+    </li>
 </ul>
+
+
+<input type="text"   (keyup)="isTyping($event)"   >-->
+
+
+
+<p>
+    {{  185966585585 | number   }}
+</p>
+
+
+
+<p>
+    {{  9586333 | currency:'TND'   }}
+</p>
+
+
+<p>
+    {{ "azerty" | uppercase }}
+</p>
+
+<p>
+    {{ "AZERTY" | lowercase }}
+</p>
+
+
+<h1>
+    {{ 'welcome to angular spring' | titlecase }}
+</h1>
+
+
+<!--************************************************************-->
+
+
+<p>
+    {{ 'tchourabi@gmail.com'  | email}}
+</p>
+
+
+
+<p>
+    {{ 'test@yahoo.fr'  | email}}
+</p>
