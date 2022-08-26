@@ -1,0 +1,44 @@
+<div class="bg">
+    <form  [formGroup]="form"  (ngSubmit)="save()" >
+
+
+        <div>
+            <label for="">title  <span *ngIf=" form.controls.title.valid == false " class="danger">*</span>  </label> <br>
+    
+            <input type="text"  formControlName="title" > <br>
+    
+    
+            <p>
+               
+                <small *ngIf="form.controls.title.touched == true && form.controls.title.valid == false" >
+                    <span *ngIf=" form.controls.title.valid == false " class="danger">this feild is required, min 3 chars</span>
+                </small>
+            </p>
+        </div>
+    
+        <div>
+            <label for="">price</label> <br>
+    
+            <input type="number" formControlName="price">
+        </div>
+    
+        <div>
+            <label for="">quantity</label> <br>
+    
+            <input type="number" formControlName="quantity">
+        </div>
+    
+        <div>
+            <label for="">founisseur email</label> <br>
+    
+            <input type="text" formControlName="email">
+        </div>
+    
+        
+        <div>
+            <button [disabled]=" ! form.valid " type="submit">SAVE</button>
+        </div>
+    
+        
+    </form>
+</div>

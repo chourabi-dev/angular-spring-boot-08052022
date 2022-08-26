@@ -1,0 +1,30 @@
+<div class="loader" *ngIf=" isLoading ">
+    <div class="spinner-border" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+</div>
+
+<div *ngIf=" ! isLoading ">
+    <div class="prob mt-5" *ngIf=" msgError != '' ">
+        <div class="alert alert-danger">
+            {{msgError}}
+        </div>
+    </div>
+
+    
+    <div class="container">
+        <div class="user-list">
+            <ul>
+                <li *ngFor="let u of users">
+                    <h3>{{u.name}}</h3>
+                    <p class="text-muted">
+                        {{ u.email }}
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+
+</div>
