@@ -1,0 +1,85 @@
+<div class="conatiner mt-5">
+ 
+
+
+    <div class="card">
+        <div class="card-body">
+
+
+
+            <h3>Create new order</h3>
+
+
+
+
+
+            <form [formGroup]="form"  (ngSubmit)="buy()" >
+
+                <div class="row mb-3">
+                    <div class="col-sm-6">
+                        <label for="">Product</label>
+                        <select  class="form-control" formControlName="product" >
+
+                            <option [value]="p.id" *ngFor="let p of products"> {{ p.title }} </option>
+
+                        </select>
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="">Quantity</label>
+                        <input type="number" class="form-control" formControlName="quantity">
+                    </div>
+                </div>
+
+                <div>
+                    <button type="submit" class="btn btn-success" [disabled]=" ! form.valid ">Save</button>
+                </div>
+
+
+                <div class="alert alert-danger" *ngIf=" errorMessage != '' " >
+                    <p>{{ errorMessage }}</p>
+                </div>
+                
+                <div class="alert alert-success" *ngIf=" successMessage != '' " >
+                    <p>{{ successMessage }}</p>
+                </div>
+                
+
+
+            </form>
+        </div>
+    </div>
+
+
+
+
+    
+    <div class="card">
+        <div class="card-body">
+
+
+
+            <h3>Historic</h3>
+
+            
+
+
+            <ol class="list-group list-group-numbered">
+                <li *ngFor="let o of orders"  class="list-group-item d-flex justify-content-between align-items-start">
+                  <div class="ms-2 me-auto">
+                    <div class="fw-bold">{{ o.product.title }}</div>
+                    {{ o.date | date:'medium' }}
+                  </div>
+                  <span class="badge bg-primary rounded-pill">
+                    {{ o.quantity }} unit(s)
+                  </span>
+                </li>
+                
+              </ol>
+
+
+
+        </div>
+
+    </div>
+
+</div>
